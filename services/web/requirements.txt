@@ -1,0 +1,11 @@
+Flask==1.1.*
+gunicorn==20.0.*
+python-dotenv
+loguru
+flask-restx
+numpy==1.16.2
+nltk==3.4.5
+pandas==0.25.3
+bs4==0.0.1
+tqdm
+mrakun
