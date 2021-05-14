@@ -17,8 +17,6 @@ from werkzeug.utils import secure_filename
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from . import api_functions
-from . import keyword_extraction_main as kw
-
 from nltk.corpus import stopwords
 
 app = Flask(__name__)
@@ -37,6 +35,15 @@ args = {"distance_threshold":2,
         "num_tokens":[1, 2, 3],
 	"max_similar" : 3, ## n most similar can show up n times
 	"max_occurrence" : 3} ## maximum frequency overall
+
+kw_extractor_input = api.model('KeywordExtractorInput', {
+    'text': fields.String(required=True, description='Title + lead + body of the article'),
+})
+
+kw_extractor_output = api.model('KeywordExtractorOutput', {
+    'keywords': fields.List(fields.String, description='Extracted keywords')
+})
+
 
 @ns.route('/extract_keywords/')
 class KeywordExtractor(Resource):
