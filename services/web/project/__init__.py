@@ -19,14 +19,13 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from . import api_functions
 from . import keyword_extraction_main as kw
 
-from nltk.stem.porter import *
 from nltk.corpus import stopwords
 
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0',
           title='API services',
-          description='TNT-KID Croatian keyword extractor REST API')
+          description='RaKUn keyword extractor REST API')
 ns = api.namespace('rest_api', description='REST services API')
 
 args = {"distance_threshold":2,

@@ -1,4 +1,4 @@
-## Flask REST API for Croatian keyword identification
+## Flask REST API for RaKUn-based keyword identification
 
 
 The repository contains code for RaKUn-based keyword extraction API.
