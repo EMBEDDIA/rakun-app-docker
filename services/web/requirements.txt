@@ -9,3 +9,4 @@ pandas==0.25.3
 bs4==0.0.1
 tqdm
 mrakun
+stopwordsiso
