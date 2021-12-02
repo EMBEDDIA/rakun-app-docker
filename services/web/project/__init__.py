@@ -17,7 +17,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from . import api_functions
-from stopwordsiso import stopwords
+import stopwordsiso as stopwords
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0',
