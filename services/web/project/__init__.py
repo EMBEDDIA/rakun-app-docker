@@ -17,8 +17,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 from . import api_functions
-from nltk.corpus import stopwords
-
+import stopwordsiso as stopwords
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0',
@@ -30,7 +29,7 @@ args = {"distance_threshold":2,
         "distance_method": "editdistance",
         "num_keywords" : 30,
         "pair_diff_length":2,
-        "stopwords" : stopwords.words('english'),
+        "stopwords" : stopwords.stopwords(stopwords.langs()),
         "bigram_count_threshold":2,
         "num_tokens":[1, 2, 3],
 	"max_similar" : 3, ## n most similar can show up n times
